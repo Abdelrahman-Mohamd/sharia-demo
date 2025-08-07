@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+/* Custom turquoise and black theme colors */
+:root {
+  --turquoise-50: #f0fdfa;
+  --turquoise-100: #ccfbf1;
+  --turquoise-200: #99f6e4;
+  --turquoise-300: #5eead4;
+  --turquoise-400: #2dd4bf;
+  --turquoise-500: #14b8a6;
+  --turquoise-600: #0d9488;
+  --turquoise-700: #0f766e;
+  --turquoise-800: #115e59;
+  --turquoise-900: #134e4a;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+*{
+  text-decoration: none;
+}
+
+/* Custom scrollbar for dark theme */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(20, 184, 166, 0.6);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(20, 184, 166, 0.8);
+}
+
+/* Enhanced glassmorphism effects */
+.backdrop-blur-3xl {
+  backdrop-filter: blur(64px);
+}
+
+.backdrop-blur-2xl {
+  backdrop-filter: blur(40px);
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Custom gradient backgrounds */
+.bg-turquoise-gradient {
+  background: linear-gradient(135deg, var(--turquoise-500), var(--turquoise-700));
+}
+
+.bg-dark-gradient {
+  background: linear-gradient(135deg, #1f2937, #111827);
+}
+
+/* Subtle glasscard texture overlay */
+.glasscard-texture::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/src/assets/form-texture.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.4;
+  z-index: 1;
+  pointer-events: none;
+  border-radius: 1rem;
+}
