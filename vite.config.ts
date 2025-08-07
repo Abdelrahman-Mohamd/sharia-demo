@@ -21,10 +21,20 @@ export default defineConfig({
           mui: ['@mui/material', '@mui/icons-material'],
           animation: ['motion']
         },
-        // Ensure proper file naming
+        // Ensure proper file naming with extensions
         entryFileNames: 'assets/[name]-[hash].js',
         chunkFileNames: 'assets/[name]-[hash].js',
-        assetFileNames: 'assets/[name]-[hash].[ext]'
+        assetFileNames: (assetInfo) => {
+          const info = assetInfo.name?.split('.') || [];
+          const ext = info[info.length - 1];
+          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(ext)) {
+            return `assets/[name]-[hash].[ext]`;
+          }
+          if (/css/i.test(ext)) {
+            return `assets/[name]-[hash].css`;
+          }
+          return `assets/[name]-[hash].[ext]`;
+        }
       }
     }
   },
@@ -34,10 +44,5 @@ export default defineConfig({
   preview: {
     port: 3000,
     host: true
-  },
-  // Server configuration
-  server: {
-    // Ensure proper MIME types during development
-    middlewareMode: false
   }
 })

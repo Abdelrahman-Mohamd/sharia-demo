@@ -1,19 +1,3 @@
-# Global MIME type fixes for JavaScript modules
-/**/*.js
-  Content-Type: text/javascript; charset=utf-8
-
-/**/*.mjs
-  Content-Type: text/javascript; charset=utf-8
-
-# Vite build assets
-/assets/*.js
-  Content-Type: text/javascript; charset=utf-8
-  Cache-Control: public, max-age=31536000, immutable
-
-/assets/*.css
-  Content-Type: text/css; charset=utf-8
-  Cache-Control: public, max-age=31536000, immutable
-
 # Security headers for all pages
 /*
   X-Frame-Options: DENY
@@ -21,16 +5,28 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
 
-# Additional static asset caching
-/assets/*
-  Cache-Control: public, max-age=31536000, immutable
-
-# Specific file types
+# JavaScript files - MIME type fix
 *.js
   Content-Type: text/javascript; charset=utf-8
 
+# Module JavaScript files
 *.mjs
   Content-Type: text/javascript; charset=utf-8
 
+# CSS files
 *.css
   Content-Type: text/css; charset=utf-8
+
+# Assets folder - JavaScript files
+/assets/*.js
+  Content-Type: text/javascript; charset=utf-8
+  Cache-Control: public, max-age=31536000, immutable
+
+# Assets folder - CSS files  
+/assets/*.css
+  Content-Type: text/css; charset=utf-8
+  Cache-Control: public, max-age=31536000, immutable
+
+# Assets folder - all files
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
