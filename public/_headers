@@ -1,48 +1,45 @@
+# Netlify _headers file for MIME types and security
+# This file provides backup header configuration
+
+# Security headers for all pages
 /*
   X-Frame-Options: DENY
-  X-XSS-Protection: 1; mode=block
   X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
   Referrer-Policy: strict-origin-when-cross-origin
 
-# JavaScript files - MIME type fix
-*.js
-  Content-Type: text/javascript; charset=utf-8
-
-# Module JavaScript files
-*.mjs
-  Content-Type: text/javascript; charset=utf-8
-
-# CSS files
-*.css
-  Content-Type: text/css; charset=utf-8
-
-# Assets folder - JavaScript files
+# JavaScript files with correct MIME type
 /assets/*.js
-  Content-Type: text/javascript; charset=utf-8
+  Content-Type: application/javascript; charset=utf-8
   Cache-Control: public, max-age=31536000, immutable
 
-# Assets folder - CSS files  
+/assets/*.mjs
+  Content-Type: application/javascript; charset=utf-8
+  Cache-Control: public, max-age=31536000, immutable
+
+# CSS files with correct MIME type
 /assets/*.css
   Content-Type: text/css; charset=utf-8
   Cache-Control: public, max-age=31536000, immutable
 
-# Assets folder - all files
-/assets/*
+# Font files
+/assets/*.woff2
+  Content-Type: font/woff2
   Cache-Control: public, max-age=31536000, immutable
 
-/*
-  X-Frame-Options: DENY
-  X-XSS-Protection: 1; mode=block
-  X-Content-Type-Options: nosniff
-  Referrer-Policy: strict-origin-when-cross-origin
-
-/assets/*.js
-  Content-Type: text/javascript; charset=utf-8
+/assets/*.woff
+  Content-Type: font/woff
   Cache-Control: public, max-age=31536000, immutable
 
-/assets/*.css
-  Content-Type: text/css; charset=utf-8
+# Image files
+/assets/*.png
+  Content-Type: image/png
   Cache-Control: public, max-age=31536000, immutable
 
-/assets/*
+/assets/*.jpg
+  Content-Type: image/jpeg
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/*.svg
+  Content-Type: image/svg+xml
   Cache-Control: public, max-age=31536000, immutable

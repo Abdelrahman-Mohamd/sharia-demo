@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "build:ci": "npm ci && tsc -b && vite build",
+    "type-check": "tsc -b --noEmit",
     "lint": "eslint .",
     "preview": "vite preview",
     "build:production": "tsc -b && vite build --mode production",

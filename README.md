@@ -1,12 +1,3 @@
-# React + TypeScript + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
 # 🕌 Sharia Compliance Analyzer
 
 An advanced Islamic contract analysis tool featuring AI-powered Sharia compliance scoring, multiple jurisprudence perspectives, and intelligent rephrasing capabilities.
@@ -18,6 +9,129 @@ An advanced Islamic contract analysis tool featuring AI-powered Sharia complianc
 - **📝 Interactive Contract Analysis**: Click-through bullet points with detailed explanations
 - **🔄 AI-Powered Rephrasing**: Multiple Islamic perspective-based content suggestions
 - **💬 Chat Heads Interface**: Messenger-style floating chat heads for perspective reviews
+- **📱 Fully Responsive**: Optimized for all screen sizes from mobile to desktop
+- **🎨 Glassmorphic UI**: Modern glass-like design with backdrop blur effects
+
+## 🚀 Deployment & CI/CD
+
+This project is configured for automatic deployment to Netlify using GitHub Actions.
+
+### Netlify Setup Instructions
+
+1. **Connect Repository to Netlify**:
+   - Go to [Netlify](https://netlify.com) and sign in
+   - Click "New site from Git"
+   - Connect your GitHub account and select this repository
+   - Set build settings:
+     - Build command: `npm ci && npm run build`
+     - Publish directory: `dist`
+     - Node version: `18`
+
+2. **Get Netlify Credentials**:
+   - Go to your Netlify site settings
+   - Copy your Site ID from "Site details"
+   - Generate a new auth token from "User settings" > "Applications"
+
+3. **Configure GitHub Secrets**:
+   - Go to your GitHub repository settings
+   - Navigate to "Secrets and variables" > "Actions"
+   - Add these secrets:
+     - `NETLIFY_AUTH_TOKEN`: Your Netlify auth token
+     - `NETLIFY_SITE_ID`: Your Netlify site ID
+
+4. **Automatic Deployment**:
+   - Push to `main` branch triggers automatic deployment
+   - Pull requests get deploy previews
+   - Build status appears in GitHub commits
+
+### Manual Deployment
+
+```bash
+# Install dependencies
+npm ci
+
+# Build for production
+npm run build
+
+# Preview build locally
+npm run preview
+```
+
+## 🛠️ Development
+
+### Prerequisites
+- Node.js 18 or higher
+- npm or yarn
+
+### Local Development
+```bash
+# Clone repository
+git clone <repository-url>
+cd sharia
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Run type checking
+npm run type-check
+
+# Run linting
+npm run lint
+```
+
+### Project Structure
+```
+src/
+├── app/           # Main app component
+├── features/      # Feature-specific components
+├── shared/        # Shared utilities and components
+├── styles/        # Global styles and CSS
+└── ui/           # Atomic design components
+    ├── atoms/     # Basic building blocks
+    ├── molecules/ # Component combinations
+    ├── organisms/ # Complex UI sections
+    ├── pages/     # Full page components
+    └── templates/ # Page layouts
+```
+
+## 🔧 Configuration Files
+
+- `netlify.toml`: Netlify deployment configuration
+- `public/_headers`: HTTP headers for proper MIME types
+- `public/_redirects`: SPA routing configuration
+- `vite.config.ts`: Build tool configuration
+- `.github/workflows/deploy.yml`: CI/CD pipeline
+
+## 📱 Responsive Design
+
+The application is fully responsive with breakpoints:
+- **Mobile**: < 768px
+- **Tablet**: 768px - 1024px
+- **Desktop**: > 1024px
+
+## 🎨 Tech Stack
+
+- **Framework**: React 19 with TypeScript
+- **Build Tool**: Vite
+- **Styling**: TailwindCSS with Glassmorphism
+- **Icons**: Material UI Icons
+- **Animations**: Motion (Framer Motion)
+- **Deployment**: Netlify with GitHub Actions CI/CD
+
+## 🔒 Security Features
+
+- Content Security Policy headers
+- XSS protection
+- Frame options for clickjacking prevention
+- Secure MIME type handling
+- Referrer policy configuration
+
+## 📄 License
+
+This project is licensed under the MIT License.
 - **🎨 Glassmorphic UI**: Modern, elegant interface with smooth animations
 - **📱 Responsive Design**: Works seamlessly across all device sizes
 
